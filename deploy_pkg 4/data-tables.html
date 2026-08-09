@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="generator" content="Observable Framework v1.13.4">
+<title>Tables de données | OASIS-M — Comptes économiques satellites de l&#x27;océan (Madagascar)</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&amp;display=swap" crossorigin>
+<link rel="preload" as="style" href="./_observablehq/theme-air.d5b7fcbe.css">
+<link rel="preload" as="style" href="./_observablehq/stdlib/inputs.f7bf0e12.css">
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&amp;display=swap" crossorigin>
+<link rel="stylesheet" type="text/css" href="./_observablehq/theme-air.d5b7fcbe.css">
+<link rel="stylesheet" type="text/css" href="./_observablehq/stdlib/inputs.f7bf0e12.css">
+<link rel="modulepreload" href="./_observablehq/client.3941ddfb.js">
+<link rel="modulepreload" href="./_observablehq/runtime.607a8173.js">
+<link rel="modulepreload" href="./_observablehq/stdlib.c88dcc4b.js">
+<link rel="modulepreload" href="./_observablehq/stdlib/inputs.41f19d8a.js">
+<link rel="modulepreload" href="./_npm/d3-dsv@3.0.1/5e480b81.js">
+<link rel="modulepreload" href="./_npm/htl@0.3.1/b7b02978.js">
+<link rel="modulepreload" href="./_npm/isoformat@0.2.1/ef9fd1ed.js">
+<link rel="icon" href="./_file/observable.1af93621.png" type="image/png" sizes="32x32">
+<script type="module">
+
+import {define} from "./_observablehq/client.3941ddfb.js";
+import {registerFile} from "./_observablehq/stdlib.c88dcc4b.js";
+
+registerFile("./data/benefit_transfer_values.csv", {"name":"./data/benefit_transfer_values.csv","mimeType":"text/csv","path":"./_file/data/benefit_transfer_values.da0b9324.csv","lastModified":1786110281784,"size":232});
+registerFile("./data/condition_fish_headline.csv", {"name":"./data/condition_fish_headline.csv","mimeType":"text/csv","path":"./_file/data/condition_fish_headline.5cbdb8a5.csv","lastModified":1786250442461,"size":550});
+registerFile("./data/condition_invert_by_zone.csv", {"name":"./data/condition_invert_by_zone.csv","mimeType":"text/csv","path":"./_file/data/condition_invert_by_zone.87066be8.csv","lastModified":1786110191664,"size":771});
+registerFile("./data/data_inventory.csv", {"name":"./data/data_inventory.csv","mimeType":"text/csv","path":"./_file/data/data_inventory.c7eedd10.csv","lastModified":1786110243816,"size":8750});
+registerFile("./data/extent_by_class.csv", {"name":"./data/extent_by_class.csv","mimeType":"text/csv","path":"./_file/data/extent_by_class.5cb1de19.csv","lastModified":1786110177584,"size":170});
+registerFile("./data/governance_regimes.csv", {"name":"./data/governance_regimes.csv","mimeType":"text/csv","path":"./_file/data/governance_regimes.44620648.csv","lastModified":1786110268435,"size":183});
+registerFile("./data/oesa_pilot_table.csv", {"name":"./data/oesa_pilot_table.csv","mimeType":"text/csv","path":"./_file/data/oesa_pilot_table.61a21b37.csv","lastModified":1786110257715,"size":1744});
+
+define({id: "f029a10c", inputs: ["FileAttachment"], outputs: ["inventory","byClass","invertByZone","fishHeadline","oesa","benefitTransfer","gov"], body: (FileAttachment) => {
+const inventory = FileAttachment("./data/data_inventory.csv").csv({typed: true});
+const byClass = FileAttachment("./data/extent_by_class.csv").csv({typed: true});
+const invertByZone = FileAttachment("./data/condition_invert_by_zone.csv").csv({typed: true});
+const fishHeadline = FileAttachment("./data/condition_fish_headline.csv").csv({typed: true});
+const oesa = FileAttachment("./data/oesa_pilot_table.csv").csv({typed: true});
+const benefitTransfer = FileAttachment("./data/benefit_transfer_values.csv").csv({typed: true});
+const gov = FileAttachment("./data/governance_regimes.csv").csv({typed: true});
+return {inventory,byClass,invertByZone,fishHeadline,oesa,benefitTransfer,gov};
+}});
+
+define({id: "aa4b1401", inputs: ["view","Inputs","inventory"], body: (view,Inputs,inventory) => {
+view(Inputs.search(inventory, {placeholder: "Rechercher un jeu de données, un statut, un pilier…"}))
+}});
+
+define({id: "da86916a", inputs: ["Inputs","inventory","display"], body: async (Inputs,inventory,display) => {
+display(await(
+Inputs.table(inventory, {
+  columns: ["Pilier", "Jeu_de_donnees", "Contenu", "Statut", "Note"],
+  header: {Pilier: "Pilier / niveau", Jeu_de_donnees: "Jeu de données", Contenu: "Contenu", Statut: "Statut", Note: "Note"},
+  width: {Contenu: 280, Note: 380},
+  rows: 20
+})
+))
+}});
+
+define({id: "3a7958c4", inputs: ["Inputs","byClass","display"], body: async (Inputs,byClass,display) => {
+display(await(
+Inputs.table(byClass, {header: {Class_name: "Classe", area_ha: "Surface (ha)", pct: "% total", n_polygons: "N polygones"}})
+))
+}});
+
+define({id: "cd292bec", inputs: ["Inputs","fishHeadline","display"], body: async (Inputs,fishHeadline,display) => {
+display(await(
+Inputs.table(fishHeadline, {header: {indicateur: "Indicateur", valeur_zone: "Valeur (zone)", niveau_reference: "Niveau de référence", IC: "CI", source_reference: "Référence", confiance: "Confiance"}})
+))
+}});
+
+define({id: "1fb3d46d", inputs: ["Inputs","invertByZone","display"], body: async (Inputs,invertByZone,display) => {
+display(await(
+Inputs.table(invertByZone, {width: {statut_COTS: 360}})
+))
+}});
+
+define({id: "060222e3", inputs: ["Inputs","gov","display"], body: async (Inputs,gov,display) => {
+display(await(
+Inputs.table(gov, {header: {Regime: "Régime", Nom: "Nom", Zone_ecologique_associee: "Zone écologique associée"}})
+))
+}});
+
+define({id: "f9cd3440", inputs: ["Inputs","oesa","display"], body: async (Inputs,oesa,display) => {
+display(await(
+Inputs.table(oesa, {width: {Source: 280, Coherence_EC4_MECA: 240, Confiance_statut: 280}})
+))
+}});
+
+define({id: "a1526332", inputs: ["Inputs","benefitTransfer","display"], body: async (Inputs,benefitTransfer,display) => {
+display(await(
+Inputs.table(benefitTransfer, {header: {classe: "Classe benthique", valeur_usd_ha_an: "USD/ha/an", source: "Source"}})
+))
+}});
+
+</script>
+</head>
+<body>
+<input id="observablehq-sidebar-toggle" type="checkbox" title="Toggle sidebar">
+<label id="observablehq-sidebar-backdrop" for="observablehq-sidebar-toggle"></label>
+<nav id="observablehq-sidebar">
+  <ol>
+    <label id="observablehq-sidebar-close" for="observablehq-sidebar-toggle"></label>
+    <li class="observablehq-link"><a href="./">OASIS-M — Comptes économiques satellites de l&#x27;océan (Madagascar)</a></li>
+  </ol>
+  <div id="observablehq-search"><input type="search" placeholder="Search"></div>
+  <div id="observablehq-search-results"></div>
+  <script>{const o=document.querySelector("#observablehq-search");o.setAttribute("data-shortcut",`${/Mac|iPhone/.test(navigator.platform)?"\u2318":"Alt-"}K`);const t=o.querySelector("input"),r=()=>import("./_observablehq/search.9cb49dbf.js");t.addEventListener("focus",r,{once:!0}),t.addEventListener("keydown",r,{once:!0});const c=document.querySelector("#observablehq-sidebar-toggle");addEventListener("keydown",e=>{(e.code==="KeyK"&&e.metaKey&&!e.altKey&&!e.ctrlKey||e.key==="/"&&!e.metaKey&&!e.altKey&&!e.ctrlKey&&e.target===document.body)&&(c.checked?t.focus():(c.click(),t.focus(),c.click()),t.select(),e.preventDefault())});}</script>
+  <section>
+    <summary>Comptes d&#x27;étendue</summary>
+    <ol>
+    <li class="observablehq-link"><a href="./extent">Étendue récifale (EC1)</a></li>
+    </ol>
+  </section>
+  <section>
+    <summary>Comptes de condition</summary>
+    <ol>
+    <li class="observablehq-link"><a href="./condition">Condition récifale (EC3)</a></li>
+    </ol>
+  </section>
+  <section>
+    <summary>Services et intégration</summary>
+    <ol>
+    <li class="observablehq-link"><a href="./services">Services écosystémiques (EC4)</a></li>
+    <li class="observablehq-link"><a href="./synthesis">Synthèse transversale</a></li>
+    <li class="observablehq-link"><a href="./seea-accounts">Comptes SEEA EA intégrés</a></li>
+    </ol>
+  </section>
+  <section class="observablehq-section-active">
+    <summary>Référence</summary>
+    <ol>
+    <li class="observablehq-link observablehq-link-active"><a href="./data-tables">Tables de données</a></li>
+    <li class="observablehq-link"><a href="./methods">Méthodes</a></li>
+    <li class="observablehq-link"><a href="./about">À propos</a></li>
+    </ol>
+  </section>
+</nav>
+<script>{const e=document.querySelector("#observablehq-sidebar"),o=document.querySelector("#observablehq-sidebar-toggle"),r=sessionStorage.getItem("observablehq-sidebar");r?o.checked=r==="true":o.indeterminate=!0;for(const t of document.querySelectorAll("#observablehq-sidebar summary")){const s=t.parentElement;switch(sessionStorage.getItem(`observablehq-sidebar:${t.textContent}`)){case"true":s.open=!0;break;case"false":s.classList.contains("observablehq-section-active")||(s.open=!1);break}}addEventListener("beforeunload",()=>sessionStorage.setItem("observablehq-sidebar-scrolly",`${e.scrollTop}`));const a=sessionStorage.getItem("observablehq-sidebar-scrolly");a!=null&&(e.style.cssText="overflow: hidden;",e.scrollTop=+a,e.style.cssText="");}</script>
+<div id="observablehq-center">
+<aside id="observablehq-toc" data-selector="h1:not(:first-of-type)[id], h2:first-child[id], :not(h1) + h2[id]">
+<nav>
+<div>Contents</div>
+<ol>
+<li class="observablehq-secondary-link"><a href="#inventaire-complet-des-jeux-de-donnees-juillet-2026">Inventaire complet des jeux de données (juillet 2026)</a></li>
+<li class="observablehq-secondary-link"><a href="#etendue-recifale-composition-par-classe">Étendue récifale — composition par classe</a></li>
+<li class="observablehq-secondary-link"><a href="#condition-poissons-agregat-par-zone">Condition — poissons (agrégat par zone)</a></li>
+<li class="observablehq-secondary-link"><a href="#condition-invertebres-par-zone">Condition — invertébrés par zone</a></li>
+<li class="observablehq-secondary-link"><a href="#gouvernance">Gouvernance</a></li>
+<li class="observablehq-secondary-link"><a href="#oesa-table-pilote">OESA — table pilote</a></li>
+<li class="observablehq-secondary-link"><a href="#valeurs-unitaires-de-valorisation-benefit-transfer">Valeurs unitaires de valorisation (benefit transfer)</a></li>
+</ol>
+</nav>
+</aside>
+<main id="observablehq-main" class="observablehq">
+<h1 id="tables-de-donnees" tabindex="-1"><a class="observablehq-header-anchor" href="#tables-de-donnees">Tables de données</a></h1>
+<p>Tables interactives et triables de l'ensemble des jeux de données sources du pipeline OASIS-M. Cliquer sur un en-tête de colonne pour trier.</p>
+<div class="observablehq observablehq--block"><!--:f029a10c:--></div>
+<h2 id="inventaire-complet-des-jeux-de-donnees-juillet-2026" tabindex="-1"><a class="observablehq-header-anchor" href="#inventaire-complet-des-jeux-de-donnees-juillet-2026">Inventaire complet des jeux de données (juillet 2026)</a></h2>
+<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:aa4b1401:--></div>
+<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:da86916a:--></div>
+<h2 id="etendue-recifale-composition-par-classe" tabindex="-1"><a class="observablehq-header-anchor" href="#etendue-recifale-composition-par-classe">Étendue récifale — composition par classe</a></h2>
+<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:3a7958c4:--></div>
+<h2 id="condition-poissons-agregat-par-zone" tabindex="-1"><a class="observablehq-header-anchor" href="#condition-poissons-agregat-par-zone">Condition — poissons (agrégat par zone)</a></h2>
+<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:cd292bec:--></div>
+<h2 id="condition-invertebres-par-zone" tabindex="-1"><a class="observablehq-header-anchor" href="#condition-invertebres-par-zone">Condition — invertébrés par zone</a></h2>
+<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:1fb3d46d:--></div>
+<h2 id="gouvernance" tabindex="-1"><a class="observablehq-header-anchor" href="#gouvernance">Gouvernance</a></h2>
+<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:060222e3:--></div>
+<h2 id="oesa-table-pilote" tabindex="-1"><a class="observablehq-header-anchor" href="#oesa-table-pilote">OESA — table pilote</a></h2>
+<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:f9cd3440:--></div>
+<h2 id="valeurs-unitaires-de-valorisation-benefit-transfer" tabindex="-1"><a class="observablehq-header-anchor" href="#valeurs-unitaires-de-valorisation-benefit-transfer">Valeurs unitaires de valorisation (benefit transfer)</a></h2>
+<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:a1526332:--></div>
+<div class="note">
+Bande de sensibilité recommandée : ±50% (et non ±30%) — le contexte océan Indien occidental (WIO) reste sous-représenté dans la littérature source de ces valeurs unitaires (Costanza et al. 2014 ; Brander et al. 2012 ; Nordlund et al. 2016 ; UNEP 2020).
+</div>
+<style>
+.note {
+  background: color-mix(in srgb, var(--theme-yellow) 12%, transparent);
+  border: 1px solid var(--theme-yellow);
+  border-radius: 6px;
+  padding: 10px 14px;
+  font-size: 13px;
+  margin: 16px 0;
+}
+</style>
+</main>
+<footer id="observablehq-footer">
+<nav><a rel="prev" href="./seea-accounts"><span>Comptes SEEA EA intégrés</span></a><a rel="next" href="./methods"><span>Méthodes</span></a></nav>
+<div>OASIS-M — Ocean Accounts Madagascar · IH.SM Université de Toliara · GOAP/UNSW Sydney · Blue Planet Fund. Cadre UN SEEA EA (2021).</div>
+</footer>
+</div>
+</body>
+</html>

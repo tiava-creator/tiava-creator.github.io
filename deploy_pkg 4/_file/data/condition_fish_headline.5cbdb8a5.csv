@@ -1,0 +1,4 @@
+indicateur,valeur_zone,niveau_reference,IC,source_reference,confiance
+Biomasse poissons (kg/ha) — référence officielle calcul,367.3,1150 kg/ha (cible conservation, McClanahan et al. 2016),0.32,McClanahan et al. 2016,HAUTE
+Biomasse poissons (kg/ha) — pour mémoire (contextuel),367.3,600 kg/ha (seuil durabilité, McClanahan et al. 2016),0.612,McClanahan et al. 2016,HAUTE
+Richesse spécifique (spp./station) — écart non résolu (voir note page Condition),58.4,117 spp. (médiane WIO, Samoilys et al. 2019),0.499,Samoilys et al. 2019,MOYENNE

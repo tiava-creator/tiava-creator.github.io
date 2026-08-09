@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="generator" content="Observable Framework v1.13.4">
+<title>Méthodes | OASIS-M — Comptes économiques satellites de l&#x27;océan (Madagascar)</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&amp;display=swap" crossorigin>
+<link rel="preload" as="style" href="./_observablehq/theme-air.d5b7fcbe.css">
+<link rel="preload" as="style" href="./_observablehq/stdlib/inputs.f7bf0e12.css">
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&amp;display=swap" crossorigin>
+<link rel="stylesheet" type="text/css" href="./_observablehq/theme-air.d5b7fcbe.css">
+<link rel="stylesheet" type="text/css" href="./_observablehq/stdlib/inputs.f7bf0e12.css">
+<link rel="modulepreload" href="./_observablehq/client.3941ddfb.js">
+<link rel="modulepreload" href="./_observablehq/runtime.607a8173.js">
+<link rel="modulepreload" href="./_observablehq/stdlib.c88dcc4b.js">
+<link rel="modulepreload" href="./_observablehq/stdlib/inputs.41f19d8a.js">
+<link rel="modulepreload" href="./_npm/d3-dsv@3.0.1/5e480b81.js">
+<link rel="modulepreload" href="./_npm/htl@0.3.1/b7b02978.js">
+<link rel="modulepreload" href="./_npm/isoformat@0.2.1/ef9fd1ed.js">
+<link rel="icon" href="./_file/observable.1af93621.png" type="image/png" sizes="32x32">
+<script type="module">
+
+import {define} from "./_observablehq/client.3941ddfb.js";
+import {registerFile} from "./_observablehq/stdlib.c88dcc4b.js";
+
+registerFile("./data/benefit_transfer_values.csv", {"name":"./data/benefit_transfer_values.csv","mimeType":"text/csv","path":"./_file/data/benefit_transfer_values.da0b9324.csv","lastModified":1786110281784,"size":232});
+
+define({id: "b751bd02", inputs: ["FileAttachment","Inputs"], outputs: ["bt"], body: (FileAttachment,Inputs) => {
+const bt = FileAttachment("./data/benefit_transfer_values.csv").csv({typed: true});
+Inputs.table(bt, {header: {classe: "Classe benthique", valeur_usd_ha_an: "USD/ha/an", source: "Source"}})
+return {bt};
+}});
+
+</script>
+</head>
+<body>
+<input id="observablehq-sidebar-toggle" type="checkbox" title="Toggle sidebar">
+<label id="observablehq-sidebar-backdrop" for="observablehq-sidebar-toggle"></label>
+<nav id="observablehq-sidebar">
+  <ol>
+    <label id="observablehq-sidebar-close" for="observablehq-sidebar-toggle"></label>
+    <li class="observablehq-link"><a href="./">OASIS-M — Comptes économiques satellites de l&#x27;océan (Madagascar)</a></li>
+  </ol>
+  <div id="observablehq-search"><input type="search" placeholder="Search"></div>
+  <div id="observablehq-search-results"></div>
+  <script>{const o=document.querySelector("#observablehq-search");o.setAttribute("data-shortcut",`${/Mac|iPhone/.test(navigator.platform)?"\u2318":"Alt-"}K`);const t=o.querySelector("input"),r=()=>import("./_observablehq/search.9cb49dbf.js");t.addEventListener("focus",r,{once:!0}),t.addEventListener("keydown",r,{once:!0});const c=document.querySelector("#observablehq-sidebar-toggle");addEventListener("keydown",e=>{(e.code==="KeyK"&&e.metaKey&&!e.altKey&&!e.ctrlKey||e.key==="/"&&!e.metaKey&&!e.altKey&&!e.ctrlKey&&e.target===document.body)&&(c.checked?t.focus():(c.click(),t.focus(),c.click()),t.select(),e.preventDefault())});}</script>
+  <section>
+    <summary>Comptes d&#x27;étendue</summary>
+    <ol>
+    <li class="observablehq-link"><a href="./extent">Étendue récifale (EC1)</a></li>
+    </ol>
+  </section>
+  <section>
+    <summary>Comptes de condition</summary>
+    <ol>
+    <li class="observablehq-link"><a href="./condition">Condition récifale (EC3)</a></li>
+    </ol>
+  </section>
+  <section>
+    <summary>Services et intégration</summary>
+    <ol>
+    <li class="observablehq-link"><a href="./services">Services écosystémiques (EC4)</a></li>
+    <li class="observablehq-link"><a href="./synthesis">Synthèse transversale</a></li>
+    <li class="observablehq-link"><a href="./seea-accounts">Comptes SEEA EA intégrés</a></li>
+    </ol>
+  </section>
+  <section class="observablehq-section-active">
+    <summary>Référence</summary>
+    <ol>
+    <li class="observablehq-link"><a href="./data-tables">Tables de données</a></li>
+    <li class="observablehq-link observablehq-link-active"><a href="./methods">Méthodes</a></li>
+    <li class="observablehq-link"><a href="./about">À propos</a></li>
+    </ol>
+  </section>
+</nav>
+<script>{const e=document.querySelector("#observablehq-sidebar"),o=document.querySelector("#observablehq-sidebar-toggle"),r=sessionStorage.getItem("observablehq-sidebar");r?o.checked=r==="true":o.indeterminate=!0;for(const t of document.querySelectorAll("#observablehq-sidebar summary")){const s=t.parentElement;switch(sessionStorage.getItem(`observablehq-sidebar:${t.textContent}`)){case"true":s.open=!0;break;case"false":s.classList.contains("observablehq-section-active")||(s.open=!1);break}}addEventListener("beforeunload",()=>sessionStorage.setItem("observablehq-sidebar-scrolly",`${e.scrollTop}`));const a=sessionStorage.getItem("observablehq-sidebar-scrolly");a!=null&&(e.style.cssText="overflow: hidden;",e.scrollTop=+a,e.style.cssText="");}</script>
+<div id="observablehq-center">
+<aside id="observablehq-toc" data-selector="h1:not(:first-of-type)[id], h2:first-child[id], :not(h1) + h2[id]">
+<nav>
+<div>Contents</div>
+<ol>
+<li class="observablehq-secondary-link"><a href="#1-zone-d-etude">1. Zone d&#x27;étude</a></li>
+<li class="observablehq-secondary-link"><a href="#2-etendue-recifale-ec-1">2. Étendue récifale (EC1)</a></li>
+<li class="observablehq-secondary-link"><a href="#3-condition-poissons-ec-3-pilier-1">3. Condition — poissons (EC3, Pilier 1)</a></li>
+<li class="observablehq-secondary-link"><a href="#4-condition-invertebres-ec-3-pilier-2">4. Condition — invertébrés (EC3, Pilier 2)</a></li>
+<li class="observablehq-secondary-link"><a href="#5-socio-economique-pilier-2">5. Socio-économique (Pilier 2)</a></li>
+<li class="observablehq-secondary-link"><a href="#6-valorisation-monetaire">6. Valorisation monétaire</a></li>
+<li class="observablehq-secondary-link"><a href="#7-normalisation-des-indices-de-condition">7. Normalisation des indices de condition</a></li>
+<li class="observablehq-secondary-link"><a href="#8-cadre-seea-ea-alignement">8. Cadre SEEA EA — alignement</a></li>
+<li class="observablehq-secondary-link"><a href="#9-limites-connues">9. Limites connues</a></li>
+<li class="observablehq-secondary-link"><a href="#references">Références</a></li>
+</ol>
+</nav>
+</aside>
+<main id="observablehq-main" class="observablehq">
+<h1 id="methodes" tabindex="-1"><a class="observablehq-header-anchor" href="#methodes">Méthodes</a></h1>
+<h2 id="protocoles-de-terrain-traitement-des-donnees-cadre-seea-ea" tabindex="-1"><a class="observablehq-header-anchor" href="#protocoles-de-terrain-traitement-des-donnees-cadre-seea-ea">Protocoles de terrain, traitement des données, cadre SEEA EA</a></h2>
+<hr>
+<h2 id="1-zone-d-etude" tabindex="-1"><a class="observablehq-header-anchor" href="#1-zone-d-etude">1. Zone d'étude</a></h2>
+<p>Sud-Ouest de Madagascar, région Atsimo Andrefana, districts Ampanihy, Toliara II, Morombe. Complexe récifal de Toliara, ~80 km (Sarodrano–Andavadoaka). 36 villages, 86 stations écologiques, six zones écologiques (Soariake, Teariake, Paysage Mahafaly, Baie de Ranobe, Sambele, Velondriake), quatre régimes de gouvernance (Nosy Ve Androka MPA, Ranobe Bay MPA, Velondriake LMMA, Soariake LMMA).</p>
+<hr>
+<h2 id="2-etendue-recifale-ec-1" tabindex="-1"><a class="observablehq-header-anchor" href="#2-etendue-recifale-ec-1">2. Étendue récifale (EC1)</a></h2>
+<p>Classification benthique à partir d'une image Sentinel-2A corrigée atmosphériquement (Sen2Cor/SNAP), traitée par indice de profondeur invariant (Lyzenga) pour limiter l'effet de la colonne d'eau, segmentée en objets homogènes (OBIA, eCognition), classée par k-plus-proches-voisins (k=5, distance euclidienne, pondération inverse-distance). Validation contre des photoquadrats CPCe géoréférencés, agrégation en cinq classes standardisées (Coral/Algae, Seagrass, Sand, Rubble, Rock).</p>
+<p>La ligne de base d'ouverture combine deux sources selon la zone : Nomenisoa et al. (2021) dans le Grand Récif de Toliara, Allen Coral Atlas (2021, résolution 5 m Planet) hors GRT, avec une matrice de transition calculée séparément par zone avant agrégation pondérée par surface.</p>
+<p><strong>Cibles de précision documentées :</strong> overall accuracy ≥ 75%, producer's accuracy corail ≥ 70%, user's accuracy ≥ 75%, validation par matrice de confusion sur 50 à 100 points terrain indépendants, contrôle qualité formalisé (somme des classes à ±1%, filtrage des polygones &lt; 0,5 ha).</p>
+<hr>
+<h2 id="3-condition-poissons-ec-3-pilier-1" tabindex="-1"><a class="observablehq-header-anchor" href="#3-condition-poissons-ec-3-pilier-1">3. Condition — poissons (EC3, Pilier 1)</a></h2>
+<p>UVC en transect en bande (belt transect) de 50 m × 5 m (2,5 m de chaque côté), soit 1 250 m³ par transect, deux transects par station, temps d'acclimatation de 5 minutes, deux passages successifs (espèces mobiles/pélagiques puis benthiques/cryptiques).</p>
+<blockquote>
+<p><strong>W = a × L^b</strong></p>
+</blockquote>
+<p>où <em>W</em> est le poids (g), <em>L</em> la longueur totale (cm), classée en tranches de 5 cm, et <em>a</em>, <em>b</em> des coefficients allométriques spécifiques à l'espèce (FishBase ; McClanahan et al. 1996).</p>
+<table>
+<thead>
+<tr>
+<th>Indicateur</th>
+<th>Niveau de référence</th>
+<th>Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Biomasse poissons</td>
+<td>600 kg/ha (seuil de durabilité)</td>
+<td>McClanahan et al. 2016</td>
+</tr>
+<tr>
+<td>Richesse spécifique</td>
+<td>117 spp./station (médiane WIO)</td>
+<td>Samoilys et al. 2019</td>
+</tr>
+<tr>
+<td>Densité COTS (inversé)</td>
+<td>15 ind/ha (seuil de pullulation)</td>
+<td>Dulvy et al. 2021</td>
+</tr>
+<tr>
+<td>Recrutement corallien</td>
+<td>1–3 recrues/m²</td>
+<td>Hughes et al. 2010</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="4-condition-invertebres-ec-3-pilier-2" tabindex="-1"><a class="observablehq-header-anchor" href="#4-condition-invertebres-ec-3-pilier-2">4. Condition — invertébrés (EC3, Pilier 2)</a></h2>
+<p>Deux protocoles distincts. Oursins : quadrats circulaires de 10 m² (corde de rayon 178 cm), posés tous les 10 m le long de trois transects de 50 m, soit 5 quadrats/transect et 15/station — d'où la surface de <strong>50 m²/transect</strong> retenue dans le calcul final (en écart documenté avec la valeur de 250 m² indiquée oralement par l'équipe terrain, probable confusion avec le protocole poisson, non tranchée). Autres macro-invertébrés (holothuries, bénitiers, poulpes, langoustes) : transects de 50 m × 1 m, en zigzag, sans manipulation du substrat, soit 150 m² cumulés sur les trois transects d'une station.</p>
+<table>
+<thead>
+<tr>
+<th>Indicateur</th>
+<th>Niveau de référence</th>
+<th>Confiance</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Densité oursins</td>
+<td>1,5–2 ind/m² (WIO, provisoire)</td>
+<td>FAIBLE</td>
+</tr>
+<tr>
+<td>Abondance bénitiers (<em>Tridacna maxima</em>)</td>
+<td>131 ind/ha (Apte et al. 2010, Lakshadweep)</td>
+<td>FAIBLE — sous-estime les densités observées</td>
+</tr>
+<tr>
+<td>COTS (<em>Acanthaster planci</em>)</td>
+<td>Présence/absence qualitative (n insuffisant pour densité)</td>
+<td>Moran 1986 ; Pratchett et al. 2014 ; Westcott et al. 2020</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="5-socio-economique-pilier-2" tabindex="-1"><a class="observablehq-header-anchor" href="#5-socio-economique-pilier-2">5. Socio-économique (Pilier 2)</a></h2>
+<p>Recensement exhaustif des pêcheurs et engins au niveau village (13 672 pêcheurs, 8 508 pirogues, 21 communes, Faustinato Behivoke). Débarquements échantillonnés deux fois par mois sur 12 mois, cycles de marée pris en compte, identification taxonomique au niveau famille. Enquête ménages en deux vagues avec instruments de rappel différents (VF1 : rappel simple, un voyage ; VF2 : journal sur 7 jours) — confond méthodologique confirmé statistiquement, VF2 retenu comme référence pour le CPUE/VAB. CPUE estimé selon Laurec et Le Guen (1981).</p>
+<hr>
+<h2 id="6-valorisation-monetaire" tabindex="-1"><a class="observablehq-header-anchor" href="#6-valorisation-monetaire">6. Valorisation monétaire</a></h2>
+<p>Approche de transfert de bénéfices (benefit transfer) pour les services récifaux : valeur unitaire USD/ha/an par classe benthique, multipliée par la surface de chaque classe dans chaque unité spatiale (MPA, LMMA).</p>
+<div class="observablehq observablehq--block"><!--:b751bd02:--></div>
+<p>Pour l'économie océanique au sens large (OESA), la valorisation de la pêche informelle est présumée suivre un prix de rente / coût d'opportunité (Barnes-Mauthe et al. 2013), distinct du prix de marché utilisé pour la VAB SNA formelle — distinction qui conditionne l'interprétation du ratio de cohérence entre VAB informelle et MECA.</p>
+<hr>
+<h2 id="7-normalisation-des-indices-de-condition" tabindex="-1"><a class="observablehq-header-anchor" href="#7-normalisation-des-indices-de-condition">7. Normalisation des indices de condition</a></h2>
+<p>Formule générale, identique à celle utilisée par le compte comparable Kenya Coastal Ecosystem Accounts :</p>
+<blockquote>
+<p><strong>CI_i = min(x_i / x_ref,i , 1,0)</strong></p>
+</blockquote>
+<p>Pour les indicateurs inversés (pression, dégradation) :</p>
+<blockquote>
+<p><strong>CI_i = max(1 − x_i / x_threshold , 0)</strong></p>
+</blockquote>
+<p><strong>Point de discipline appliqué dans ce pipeline (et absent de la documentation publique du compte comparable) :</strong> toute nouvelle formule de CI est accompagnée d'une assertion de plage vérifiant que le résultat reste dans [0, 1] avant toute agrégation — une omission de ce contrôle dans un compte comparable a laissé passer des formules non plafonnées (DBH, hauteur) susceptibles de produire un CI &gt; 1.</p>
+<p>Le composite intégré M1.3 pondère par pilier (poissons 0,40 ; invertébrés 0,20 ; benthique 0,40) plutôt que par moyenne simple, avec un indicateur explicite de compte partiel (<code>compte_partiel</code>) lorsqu'un pilier entier est manquant — c'est le cas actuellement pour le Pilier 3 (habitat benthique).</p>
+<hr>
+<h2 id="8-cadre-seea-ea-alignement" tabindex="-1"><a class="observablehq-header-anchor" href="#8-cadre-seea-ea-alignement">8. Cadre SEEA EA — alignement</a></h2>
+<ul>
+<li><strong>Types d'écosystèmes :</strong> récifs coralliens photiques (IUCN GET M1.3)</li>
+<li><strong>Zone comptable :</strong> complexe récifal de Toliara, Atsimo Andrefana, Madagascar</li>
+<li><strong>Types de comptes :</strong> Étendue (EC1, pilote), Condition (EC3, partiel), Services (EC4, bloqué), Actif et monétaire (EC2/MECA, bloqué)</li>
+<li><strong>Périodes comptables :</strong> 2021–2026 (étendue) ; campagne continue 2025-2026, traitée comme une période unique et non comme deux campagnes indépendantes (condition) ; 2025 proposé comme année pivot (MECA, non confirmé)</li>
+</ul>
+<hr>
+<h2 id="9-limites-connues" tabindex="-1"><a class="observablehq-header-anchor" href="#9-limites-connues">9. Limites connues</a></h2>
+<ol>
+<li><strong>Classification benthique complète non validée indépendamment</strong> — écart de surface non réconcilié (~4587 km² vs 111 544 ha canonique), métriques de validation partiellement construites sur les données d'entraînement.</li>
+<li><strong>Habitat benthique par site indisponible</strong> — Pilier 3 du compte de condition en attente, composite M1.3 actuellement partiel.</li>
+<li><strong>Confond d'instrument d'enquête ménages (VF1/VF2)</strong> — limite la comparabilité temporelle du CPUE/VAB pêche informelle.</li>
+<li><strong>Design en coupes transversales répétées, pas en panel</strong> — chaque village vu 1 à 2 fois, limite l'analyse de tendance CPUE.</li>
+<li><strong>Surface d'échantillonnage oursin non confirmée par l'équipe terrain</strong> — 50 m²/transect retenu sur test de vraisemblance biologique, en écart avec la valeur orale de 250 m².</li>
+<li><strong>IC_bénitier non discriminant</strong> — valeur de référence (Apte et al. 2010) trop basse par rapport aux densités observées localement.</li>
+<li><strong>Artefact d'échantillonnage COTS</strong> — un seul individu observé sur un seul transect peut convertir en une densité déclenchant à tort le seuil de pullulation.</li>
+<li><strong>Zones écologiques non assignées pour quatre stations</strong> (Nosy Satra, Befasy, Ambohibola, Tanilahy) — terrain clos, non résolvable par nouvelle collecte.</li>
+<li><strong>Comptes de niveau 4 (services, actif, OESA) bloqués</strong> — dépendent d'un compte d'étendue consensuel non encore atteint.</li>
+</ol>
+<hr>
+<h2 id="references" tabindex="-1"><a class="observablehq-header-anchor" href="#references">Références</a></h2>
+<ul>
+<li>Apte, D. et al. (2010). Population status of the giant clam species in the Lakshadweep archipelago.</li>
+<li>Barnes-Mauthe, M., Oleson, K.L.L., &amp; Zafindrasilivonona, B. (2013). <em>Fisheries Research</em>, 147, 175–185.</li>
+<li>Behivoke, F. et al. (2026). <em>Aquatic Living Resources</em>, 39, 6.</li>
+<li>Brander, L. et al. (2012). <em>Ecosystem Services.</em></li>
+<li>Costanza, R. et al. (2014). <em>Global Environmental Change.</em></li>
+<li>Dulvy, N.K. et al. (2021). Updated COTS outbreak thresholds for the Western Indian Ocean.</li>
+<li>Hughes, T.P. et al. (2010). <em>Trends in Ecology &amp; Evolution</em>, 25(11), 633–642.</li>
+<li>Laroche, J., &amp; Ramananarivo, N. (1995). <em>Coral Reefs</em>, 14, 193–200.</li>
+<li>Laurec, A., &amp; Le Guen, J.C. (1981). Dynamique des populations marines exploitées.</li>
+<li>McClanahan, T.R. et al. (1996, 2016). <em>Conservation Biology</em>, 30(3), 577–587.</li>
+<li>Moran, P.J. (1986). The Acanthaster phenomenon.</li>
+<li>Nordlund, L.M. et al. (2016). <em>Marine Pollution Bulletin.</em></li>
+<li>Pratchett, M.S. et al. (2014). Cascading effects of Acanthaster planci.</li>
+<li>Samoilys, M.A. et al. (2019). Fish biomass baselines in WIO reefs.</li>
+<li>UNEP (2020). <em>Out of the Blue.</em></li>
+<li>United Nations (2021). <em>System of Environmental-Economic Accounting — Ecosystem Accounting</em> (SEEA EA). United Nations, New York.</li>
+<li>Westcott, D.A. et al. (2020). Relative efficacy of three approaches to mitigate Crown-of-Thorns Starfish outbreaks.</li>
+</ul>
+</main>
+<footer id="observablehq-footer">
+<nav><a rel="prev" href="./data-tables"><span>Tables de données</span></a><a rel="next" href="./about"><span>À propos</span></a></nav>
+<div>OASIS-M — Ocean Accounts Madagascar · IH.SM Université de Toliara · GOAP/UNSW Sydney · Blue Planet Fund. Cadre UN SEEA EA (2021).</div>
+</footer>
+</div>
+</body>
+</html>

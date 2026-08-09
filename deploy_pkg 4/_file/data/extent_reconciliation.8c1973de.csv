@@ -1,0 +1,9 @@
+etape,valeur
+Lignes brutes (polygones),58882
+Lignes NaN retirées (Area et Surface_m manquants simultanément),19
+Doublons exacts retirés (Class_name/Area/Surface_m identiques),3444
+Lignes après nettoyage,55419
+Surface finale (ha, colonne Area, arrondie),111550.5
+Surface finale recalculée (ha, via Surface_m/10000),111552.88
+Baseline canonique (Reef_extent.shp),111544
+Écart absolu vs baseline canonique (ha),8.88
