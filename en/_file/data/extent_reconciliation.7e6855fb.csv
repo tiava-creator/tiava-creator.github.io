@@ -1,0 +1,9 @@
+step,value
+Raw rows (polygons),58882
+NaN rows removed (Area and Surface_m both missing),19
+Exact duplicates removed (identical Class_name/Area/Surface_m),3444
+Rows after cleaning,55419
+"Final surface (ha, Area column, rounded)",111550.5
+"Final surface recomputed (ha, via Surface_m/10000)",111552.88
+Canonical baseline (Reef_extent.shp),111544
+Absolute gap vs canonical baseline (ha),8.88

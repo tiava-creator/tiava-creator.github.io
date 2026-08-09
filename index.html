@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="generator" content="Observable Framework v1.13.4">
+<title>OASIS-M — Comptes économiques satellites de l&#x27;océan (Madagascar)</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&amp;display=swap" crossorigin>
+<link rel="preload" as="style" href="./_observablehq/theme-air.d5b7fcbe.css">
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&amp;display=swap" crossorigin>
+<link rel="stylesheet" type="text/css" href="./_observablehq/theme-air.d5b7fcbe.css">
+<link rel="modulepreload" href="./_observablehq/client.3941ddfb.js">
+<link rel="modulepreload" href="./_observablehq/runtime.607a8173.js">
+<link rel="modulepreload" href="./_observablehq/stdlib.c88dcc4b.js">
+<link rel="modulepreload" href="./_npm/d3-dsv@3.0.1/5e480b81.js">
+<link rel="icon" href="./_file/observable.1af93621.png" type="image/png" sizes="32x32">
+<script type="module">
+
+import {define} from "./_observablehq/client.3941ddfb.js";
+import {registerFile} from "./_observablehq/stdlib.c88dcc4b.js";
+
+registerFile("./data/condition_fish_headline.csv", {"name":"./data/condition_fish_headline.csv","mimeType":"text/csv","path":"./_file/data/condition_fish_headline.5cbdb8a5.csv","lastModified":1786250442461,"size":550});
+registerFile("./data/condition_invert_by_zone.csv", {"name":"./data/condition_invert_by_zone.csv","mimeType":"text/csv","path":"./_file/data/condition_invert_by_zone.87066be8.csv","lastModified":1786110191664,"size":771});
+registerFile("./data/data_inventory.csv", {"name":"./data/data_inventory.csv","mimeType":"text/csv","path":"./_file/data/data_inventory.c7eedd10.csv","lastModified":1786110243816,"size":8750});
+registerFile("./data/extent_by_class.csv", {"name":"./data/extent_by_class.csv","mimeType":"text/csv","path":"./_file/data/extent_by_class.5cb1de19.csv","lastModified":1786110177584,"size":170});
+
+define({id: "ce1e0bea", inputs: ["FileAttachment"], outputs: ["extentByClass","invertByZone","fishHeadline","inventory"], body: (FileAttachment) => {
+const extentByClass = FileAttachment("./data/extent_by_class.csv").csv({typed: true});
+const invertByZone = FileAttachment("./data/condition_invert_by_zone.csv").csv({typed: true});
+const fishHeadline = FileAttachment("./data/condition_fish_headline.csv").csv({typed: true});
+const inventory = FileAttachment("./data/data_inventory.csv").csv({typed: true});
+return {extentByClass,invertByZone,fishHeadline,inventory};
+}});
+
+</script>
+</head>
+<body>
+<input id="observablehq-sidebar-toggle" type="checkbox" title="Toggle sidebar">
+<label id="observablehq-sidebar-backdrop" for="observablehq-sidebar-toggle"></label>
+<nav id="observablehq-sidebar">
+  <ol>
+    <label id="observablehq-sidebar-close" for="observablehq-sidebar-toggle"></label>
+    <li class="observablehq-link observablehq-link-active"><a href="./">OASIS-M — Comptes économiques satellites de l&#x27;océan (Madagascar)</a></li>
+  </ol>
+  <div id="observablehq-search"><input type="search" placeholder="Search"></div>
+  <div id="observablehq-search-results"></div>
+  <script>{const o=document.querySelector("#observablehq-search");o.setAttribute("data-shortcut",`${/Mac|iPhone/.test(navigator.platform)?"\u2318":"Alt-"}K`);const t=o.querySelector("input"),r=()=>import("./_observablehq/search.9cb49dbf.js");t.addEventListener("focus",r,{once:!0}),t.addEventListener("keydown",r,{once:!0});const c=document.querySelector("#observablehq-sidebar-toggle");addEventListener("keydown",e=>{(e.code==="KeyK"&&e.metaKey&&!e.altKey&&!e.ctrlKey||e.key==="/"&&!e.metaKey&&!e.altKey&&!e.ctrlKey&&e.target===document.body)&&(c.checked?t.focus():(c.click(),t.focus(),c.click()),t.select(),e.preventDefault())});}</script>
+  <section>
+    <summary>Comptes d&#x27;étendue</summary>
+    <ol>
+    <li class="observablehq-link"><a href="./extent">Étendue récifale (EC1)</a></li>
+    </ol>
+  </section>
+  <section>
+    <summary>Comptes de condition</summary>
+    <ol>
+    <li class="observablehq-link"><a href="./condition">Condition récifale (EC3)</a></li>
+    </ol>
+  </section>
+  <section>
+    <summary>Services et intégration</summary>
+    <ol>
+    <li class="observablehq-link"><a href="./services">Services écosystémiques (EC4)</a></li>
+    <li class="observablehq-link"><a href="./synthesis">Synthèse transversale</a></li>
+    <li class="observablehq-link"><a href="./seea-accounts">Comptes SEEA EA intégrés</a></li>
+    </ol>
+  </section>
+  <section>
+    <summary>Référence</summary>
+    <ol>
+    <li class="observablehq-link"><a href="./data-tables">Tables de données</a></li>
+    <li class="observablehq-link"><a href="./methods">Méthodes</a></li>
+    <li class="observablehq-link"><a href="./about">À propos</a></li>
+    </ol>
+  </section>
+</nav>
+<script>{const e=document.querySelector("#observablehq-sidebar"),o=document.querySelector("#observablehq-sidebar-toggle"),r=sessionStorage.getItem("observablehq-sidebar");r?o.checked=r==="true":o.indeterminate=!0;for(const t of document.querySelectorAll("#observablehq-sidebar summary")){const s=t.parentElement;switch(sessionStorage.getItem(`observablehq-sidebar:${t.textContent}`)){case"true":s.open=!0;break;case"false":s.classList.contains("observablehq-section-active")||(s.open=!1);break}}addEventListener("beforeunload",()=>sessionStorage.setItem("observablehq-sidebar-scrolly",`${e.scrollTop}`));const a=sessionStorage.getItem("observablehq-sidebar-scrolly");a!=null&&(e.style.cssText="overflow: hidden;",e.scrollTop=+a,e.style.cssText="");}</script>
+<div id="observablehq-center">
+<main id="observablehq-main" class="observablehq">
+<div class="observablehq observablehq--block"><!--:ce1e0bea:--></div>
+<h1 id="oasis-m-comptes-economiques-satellites-de-l-ocean-de-madagascar" tabindex="-1"><a class="observablehq-header-anchor" href="#oasis-m-comptes-economiques-satellites-de-l-ocean-de-madagascar">OASIS-M — Comptes économiques satellites de l'océan de Madagascar</a></h1>
+<h2 id="compte-pilote-seea-ea-des-recifs-coralliens-photiques-m1-3-sud-ouest-madagascar-2025-2026" tabindex="-1"><a class="observablehq-header-anchor" href="#compte-pilote-seea-ea-des-recifs-coralliens-photiques-m1-3-sud-ouest-madagascar-2025-2026">Compte pilote SEEA EA des récifs coralliens photiques (M1.3) — Sud-Ouest Madagascar, 2025–2026</a></h2>
+<hr>
+<h2 id="abstract" tabindex="-1"><a class="observablehq-header-anchor" href="#abstract">Abstract</a></h2>
+<p>Ce rapport présente le compte pilote SEEA EA (UN, 2021)[^1] pour les récifs coralliens photiques (IUCN GET M1.3) du complexe récifal de Toliara, région Atsimo Andrefana, Sud-Ouest Madagascar. Le projet OASIS-M (Ocean Accounts in Support of Sustainable Ocean Planning for Madagascar) est conduit par l'Institut Halieutique et des Sciences Marines (IH.SM, Université de Toliara), en partenariat avec le Global Ocean Accounts Partnership (GOAP/UNSW Sydney) et le soutien du Blue Planet Fund, novembre 2024 – décembre 2026.</p>
+<p>Le compte couvre 36 villages et 86 stations écologiques réparties en six zones (Soariake, Teariake, Paysage Mahafaly, Baie de Ranobe, Sambele, Velondriake) et quatre régimes de gouvernance (deux aires marines protégées, deux LMMA). La baseline d'étendue récifale canonique est de <strong>111 544 ha</strong>. La condition biotique s'appuie sur 26 sites / 86 stations de recensement visuel sous-marin (UVC) pour les poissons et sur 323 lignes de données invertébrés post-contrôle qualité.</p>
+<p>Contrairement au compte de référence régional le plus proche — Kenya Coastal Ecosystem Accounts, Kilifi County (Gacutan et al., mars 2026)[^2] — ce pilote documente explicitement, compte par compte, ce qui est publiable, pilote, proxy ou bloqué, plutôt que de ne présenter que les résultats finalisés. Cette page reprend volontairement la structure de présentation du compte kényan (étendue → condition → services → synthèse transversale → comptes SEEA EA intégrés), tout en conservant la discipline de traçabilité propre au pipeline OASIS-M.</p>
+<hr>
+<h2 id="study-rationale" tabindex="-1"><a class="observablehq-header-anchor" href="#study-rationale">Study rationale</a></h2>
+<p>Le Sud-Ouest de Madagascar abrite l'un des plus grands systèmes récifaux de l'océan Indien occidental, support direct des moyens de subsistance de la population vézo pratiquant la pêche artisanale. Aucun compte satellite océanique normalisé selon le cadre SEEA EA n'existait pour cette zone avant OASIS-M. Ce pilote établit la condition d'ouverture de la période comptable 2025-2026 et identifie explicitement l'infrastructure de données, les niveaux de référence et les priorités de suivi nécessaires à une compilation régulière des comptes, dans la perspective d'une intégration au SNA/NAMAD via l'INSTAT.</p>
+<hr>
+<h2 id="study-area" tabindex="-1"><a class="observablehq-header-anchor" href="#study-area">Study area</a></h2>
+<p><strong>Récifs coralliens (M1.3)</strong> — Complexe récifal de Toliara, ~80 km (Sarodrano–Andavadoaka), districts Ampanihy, Toliara II, Morombe, région Atsimo Andrefana.</p>
+<ul>
+<li>2 piliers biophysiques traités : condition poisson (26 sites/86 stations) et invertébrés (323 lignes, 6 zones)</li>
+<li>6 zones écologiques : Soariake, Teariake, Paysage Mahafaly, Baie de Ranobe, Sambele, Velondriake</li>
+<li>4 régimes de gouvernance : Nosy Ve Androka (MPA), Ranobe Bay (MPA), Velondriake (LMMA), Soariake (LMMA)</li>
+<li>Baseline d'étendue : 111 544 ha (2021, révisée campagne 2026)</li>
+</ul>
+<hr>
+<h2 id="key-metrics-at-a-glance" tabindex="-1"><a class="observablehq-header-anchor" href="#key-metrics-at-a-glance">Key metrics at a glance</a></h2>
+<div class="grid grid-cols-4">
+  <div class="card">
+    <h3>Étendue récifale</h3>
+    <span class="big-number">111 544 ha</span>
+    <span class="note">baseline canonique, validée à 0,006% près</span>
+  </div>
+  <div class="card">
+    <h3>Biomasse poissons</h3>
+    <span class="big-number">367,3 kg/ha</span>
+    <span class="note">réf. officielle calcul CI : 1150 kg/ha (IC=0,32) — pour mémoire, seuil de durabilité WIO : 600 kg/ha</span>
+  </div>
+  <div class="card">
+    <h3>Richesse spécifique</h3>
+    <span class="big-number">58,4 esp./station</span>
+    <span class="note">227 espèces cumulées, 38 familles — médiane WIO 117 (Samoilys et al. 2019)</span>
+  </div>
+  <div class="card">
+    <h3>IC_oursin — écart inter-zones</h3>
+    <span class="big-number flag">0,03 → 1,00</span>
+    <span class="note">Teariake (dégradé) à Velondriake (plafond)</span>
+  </div>
+</div>
+<div class="grid grid-cols-3">
+  <div class="card">
+    <h3>Sites de suivi poisson/invertébrés</h3>
+    <span class="big-number">26 / 86</span>
+    <span class="note">sites / stations, hiérarchie canonique</span>
+  </div>
+  <div class="card">
+    <h3>Zones écologiques</h3>
+    <span class="big-number">6</span>
+    <span class="note">Soariake, Teariake, Paysage Mahafaly, Baie de Ranobe, Sambele, Velondriake</span>
+  </div>
+  <div class="card">
+    <h3>Comptes de niveau 4 (OESA)</h3>
+    <span class="big-number flag">Bloqué</span>
+    <span class="note">toutes les rubriques VAB en attente de résolution EC1/EC4</span>
+  </div>
+</div>
+<hr>
+<h2 id="headline-findings" tabindex="-1"><a class="observablehq-header-anchor" href="#headline-findings">Headline findings</a></h2>
+<h3 id="la-biomasse-poisson-est-sous-le-seuil-de-durabilite-wio-et-la-correction-methodologique-compte-davantage-que-la-valeur-elle-meme" tabindex="-1"><a class="observablehq-header-anchor" href="#la-biomasse-poisson-est-sous-le-seuil-de-durabilite-wio-et-la-correction-methodologique-compte-davantage-que-la-valeur-elle-meme">La biomasse poisson est sous le seuil de durabilité WIO, et la correction méthodologique compte davantage que la valeur elle-même</a></h3>
+<p>La biomasse moyenne pondérée par zone (367,3 kg/ha) est inférieure au seuil WIO de 600 kg/ha (McClanahan et al. 2016). Ce chiffre corrige une erreur de facteur 2 sur une estimation initiale de 744,5 kg/ha, due à une hypothèse de surface de transect incorrecte — l'ancienne valeur ne doit plus être citée. La correction elle-même, documentée et tracée, est le résultat méthodologique le plus solide de ce pilote à ce stade.</p>
+<h3 id="l-indice-d-oursins-s-effondre-a-sambele-apres-reassignation-de-zone" tabindex="-1"><a class="observablehq-header-anchor" href="#l-indice-d-oursins-s-effondre-a-sambele-apres-reassignation-de-zone">L'indice d'oursins s'effondre à Sambele après réassignation de zone</a></h3>
+<p>La correction de rattachement écologique de quatre stations (Fierenamasay, Tsandamba) a fait chuter l'IC_oursin de Sambele de 0,8757 à <strong>0,0648</strong> — la zone passe d'un profil proche de Velondriake à la zone la plus dégradée du compte après Teariake. Toute figure ou tout brouillon utilisant l'ancien chiffre de 0,88 doit être corrigé avant diffusion.</p>
+<h3 id="la-classification-benthique-complete-reste-bloquee-pas-seulement-en-retard" tabindex="-1"><a class="observablehq-header-anchor" href="#la-classification-benthique-complete-reste-bloquee-pas-seulement-en-retard">La classification benthique complète reste bloquée, pas seulement en retard</a></h3>
+<p>Contrairement à la baseline canonique d'étendue (111 544 ha, publiable), la classification benthique complète (<code>Resultat.shp</code>) affiche une incohérence de facteur ~4 avec le baseline canonique et des métriques de validation (OA=95,77%, Kappa=0,89) qui restent partiellement construites sur les données d'entraînement. La réponse reçue de l'auteur de la classification ne résout pas ces deux points. Le compte de condition benthique (Pilier 3, poids 40% dans le composite intégré) reste donc en attente (PENDING), et le CI composite M1.3 actuellement calculable est <strong>partiel</strong> (Piliers 1+2 seulement).</p>
+<h3 id="les-comptes-de-niveau-4-oesa-et-le-compte-monetaire-meca-restent-bloques" tabindex="-1"><a class="observablehq-header-anchor" href="#les-comptes-de-niveau-4-oesa-et-le-compte-monetaire-meca-restent-bloques">Les comptes de niveau 4 (OESA) et le compte monétaire (MECA) restent bloqués</a></h3>
+<p>Le MECA dépend d'un EC1 consensuel — non atteint — et d'un EC4 provisioning résolu — non atteint (confond d'instrument VF1/VF2, absence de correspondance commune→district). Toutes les rubriques de la table OESA pilote (pêche formelle, pêche informelle, tourisme, transport) sont au statut Bloqué en juillet 2026.</p>
+<hr>
+<h2 id="report-structure" tabindex="-1"><a class="observablehq-header-anchor" href="#report-structure">Report structure</a></h2>
+<h3 id="etendue-recifale-ec-1" tabindex="-1"><a class="observablehq-header-anchor" href="#etendue-recifale-ec-1"><a href="./extent">Étendue récifale (EC1)</a></a></h3>
+<p>Compte d'étendue canonique (111 544 ha), composition par classe benthique, réconciliation du nettoyage de données, statut de la classification complète.</p>
+<h3 id="condition-recifale-ec-3" tabindex="-1"><a class="observablehq-header-anchor" href="#condition-recifale-ec-3"><a href="./condition">Condition récifale (EC3)</a></a></h3>
+<p>Biomasse et richesse poisson, indices de condition invertébrés par zone (oursin, bénitier, COTS), statut du pilier habitat benthique.</p>
+<h3 id="services-ecosystemiques-ec-4" tabindex="-1"><a class="observablehq-header-anchor" href="#services-ecosystemiques-ec-4"><a href="./services">Services écosystémiques (EC4)</a></a></h3>
+<p>Architecture nursery + provisioning, règle anti-double-comptage, statut de blocage empirique.</p>
+<h3 id="synthese-transversale" tabindex="-1"><a class="observablehq-header-anchor" href="#synthese-transversale"><a href="./synthesis">Synthèse transversale</a></a></h3>
+<p>Table de confiance des données consolidée (Publiable / Pilote / Proxy / Bloqué / À trancher), comparaison méthodologique avec le compte Kenya.</p>
+<h3 id="comptes-seea-ea-integres" tabindex="-1"><a class="observablehq-header-anchor" href="#comptes-seea-ea-integres"><a href="./seea-accounts">Comptes SEEA EA intégrés</a></a></h3>
+<p>Architecture à quatre niveaux (EC1→EC4, MECA, OESA), état d'avancement par niveau.</p>
+<h3 id="methodes" tabindex="-1"><a class="observablehq-header-anchor" href="#methodes"><a href="./methods">Méthodes</a></a></h3>
+<p>Protocoles de terrain, formules d'indices de condition, valeurs unitaires de valorisation, limites connues.</p>
+<h3 id="tables-de-donnees" tabindex="-1"><a class="observablehq-header-anchor" href="#tables-de-donnees"><a href="./data-tables">Tables de données</a></a></h3>
+<p>Tables triables de l'ensemble des jeux de données sources et de leur statut.</p>
+<hr>
+<p><strong>Zone d'étude :</strong> Complexe récifal de Toliara, Atsimo Andrefana, Madagascar | <strong>Cadre :</strong> UN SEEA EA | <strong>Institution :</strong> IH.SM, Université de Toliara | <strong>Partenaires :</strong> GOAP/UNSW Sydney, Blue Planet Fund | <a href="./about">À propos et partenaires</a></p>
+<hr>
+<p>[^1]: United Nations (2021). <em>System of Environmental-Economic Accounting — Ecosystem Accounting</em> (SEEA EA). United Nations, New York.
+[^2]: Gacutan, J. et al. (2026). <em>Kenya Coastal Ecosystem Accounts — Baseline Assessment of Coral Reef, Mangrove, and Seagrass Ecosystems, Kilifi County, 2024-2025.</em> j-gacutan.github.io/Kenya_accounts</p>
+<style>
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.card h3 {
+  margin: 0;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--theme-foreground-muted);
+}
+.big-number {
+  font-size: 28px;
+  font-weight: 600;
+}
+.big-number.flag {
+  color: var(--theme-red);
+}
+.note {
+  font-size: 12px;
+  color: var(--theme-foreground-muted);
+}
+</style>
+</main>
+<footer id="observablehq-footer">
+<nav><a rel="next" href="./extent"><span>Étendue récifale (EC1)</span></a></nav>
+<div>OASIS-M — Ocean Accounts Madagascar · IH.SM Université de Toliara · GOAP/UNSW Sydney · Blue Planet Fund. Cadre UN SEEA EA (2021).</div>
+</footer>
+</div>
+</body>
+</html>

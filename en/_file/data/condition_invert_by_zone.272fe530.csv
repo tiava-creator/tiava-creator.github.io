@@ -1,0 +1,7 @@
+Zone,oursin_mean_ind_m2,oursin_sd_ind_m2,n_stations_oursin,IC_oursin,clam_mean_ind_ha,IC_benitier,n_stations_benitier,statut_COTS
+Baie de Ranobe,0.4396,1.1985,25,0.2512,512.5,1.0,8,"No observation — ecological absence NOT confirmed (protocol gap: no dedicated manta-tow/timed search in this zone, no systematic zero count for COTS)"
+Paysage Mahafaly,1.1095,1.0261,19,0.634,490.9091,1.0,11,"Confirmed presence — 3 site(s), 4 total observation(s) — density NOT quantifiable (n<3/site, undersampling documented for ribbon-transect method, cf. Moran 1986; Pratchett et al. 2014; Westcott et al. 2020)"
+Sambele,0.1133,0.0577,3,0.0648,900,1.0,2,"No observation — ecological absence NOT confirmed (protocol gap: no dedicated manta-tow/timed search in this zone, no systematic zero count for COTS)"
+Soariake,1.57,2.1672,7,0.8971,800,1.0,4,"No observation — ecological absence NOT confirmed (protocol gap: no dedicated manta-tow/timed search in this zone, no systematic zero count for COTS)"
+Teariake,0.0525,0.105,4,0.03,250,1.0,2,"No observation — ecological absence NOT confirmed (protocol gap: no dedicated manta-tow/timed search in this zone, no systematic zero count for COTS)"
+Velondriake,2.6405,2.9529,21,1.0,966.6667,1.0,6,"No observation — ecological absence NOT confirmed (protocol gap: no dedicated manta-tow/timed search in this zone, no systematic zero count for COTS)"

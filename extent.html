@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="generator" content="Observable Framework v1.13.4">
+<title>Étendue récifale (EC1) | OASIS-M — Comptes économiques satellites de l&#x27;océan (Madagascar)</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&amp;display=swap" crossorigin>
+<link rel="preload" as="style" href="./_observablehq/theme-air.d5b7fcbe.css">
+<link rel="preload" as="style" href="./_observablehq/stdlib/inputs.f7bf0e12.css">
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&amp;display=swap" crossorigin>
+<link rel="stylesheet" type="text/css" href="./_observablehq/theme-air.d5b7fcbe.css">
+<link rel="stylesheet" type="text/css" href="./_observablehq/stdlib/inputs.f7bf0e12.css">
+<link rel="modulepreload" href="./_observablehq/client.3941ddfb.js">
+<link rel="modulepreload" href="./_observablehq/runtime.607a8173.js">
+<link rel="modulepreload" href="./_observablehq/stdlib.c88dcc4b.js">
+<link rel="modulepreload" href="./_observablehq/stdlib/inputs.41f19d8a.js">
+<link rel="modulepreload" href="./_npm/@observablehq/plot@0.6.17/a77def5d.js">
+<link rel="modulepreload" href="./_npm/d3-dsv@3.0.1/5e480b81.js">
+<link rel="modulepreload" href="./_npm/htl@0.3.1/b7b02978.js">
+<link rel="modulepreload" href="./_npm/isoformat@0.2.1/ef9fd1ed.js">
+<link rel="icon" href="./_file/observable.1af93621.png" type="image/png" sizes="32x32">
+<script type="module">
+
+import {define} from "./_observablehq/client.3941ddfb.js";
+import {registerFile} from "./_observablehq/stdlib.c88dcc4b.js";
+
+registerFile("./data/extent_by_class.csv", {"name":"./data/extent_by_class.csv","mimeType":"text/csv","path":"./_file/data/extent_by_class.5cb1de19.csv","lastModified":1786110177584,"size":170});
+registerFile("./data/extent_reconciliation.csv", {"name":"./data/extent_reconciliation.csv","mimeType":"text/csv","path":"./_file/data/extent_reconciliation.8c1973de.csv","lastModified":1786110183838,"size":419});
+registerFile("./data/governance_regimes.csv", {"name":"./data/governance_regimes.csv","mimeType":"text/csv","path":"./_file/data/governance_regimes.44620648.csv","lastModified":1786110268435,"size":183});
+
+define({id: "8c36b1a1", inputs: ["FileAttachment"], outputs: ["byClass","reconciliation"], body: (FileAttachment) => {
+const byClass = FileAttachment("./data/extent_by_class.csv").csv({typed: true});
+const reconciliation = FileAttachment("./data/extent_reconciliation.csv").csv({typed: true});
+return {byClass,reconciliation};
+}});
+
+define({id: "70d6c570", inputs: ["Plot"], outputs: ["classChart"], body: (Plot) => {
+function classChart(data, {width} = {}) {
+  return Plot.plot({
+    width,
+    height: 320,
+    marginLeft: 100,
+    x: {label: "Surface (ha)", grid: true},
+    y: {label: null},
+    marks: [
+      Plot.barX(data, {x: "area_ha", y: "Class_name", fill: "#2b6a7c", sort: {y: "-x"}, tip: true}),
+      Plot.text(data, {x: "area_ha", y: "Class_name", text: (d) => `${d.pct.toFixed(1)}%`, dx: 22}),
+      Plot.ruleX([0])
+    ]
+  });
+}
+return {classChart};
+}});
+
+define({id: "20e324aa", mode: "inline", inputs: ["resize","classChart","byClass","display"], body: async (resize,classChart,byClass,display) => {
+display(await(
+resize((width) => classChart(byClass, {width}))
+))
+}});
+
+define({id: "757a18ab", inputs: ["Inputs","byClass","display"], body: async (Inputs,byClass,display) => {
+display(await(
+Inputs.table(byClass, {
+  columns: ["Class_name", "area_ha", "pct", "n_polygons"],
+  header: {Class_name: "Classe", area_ha: "Surface (ha)", pct: "% total", n_polygons: "N polygones"},
+  format: {area_ha: (x) => x.toLocaleString("fr-FR", {maximumFractionDigits: 2}), pct: (x) => `${x}%`}
+})
+))
+}});
+
+define({id: "51bf7015", inputs: ["Inputs","reconciliation","display"], body: async (Inputs,reconciliation,display) => {
+display(await(
+Inputs.table(reconciliation, {
+  columns: ["etape", "valeur"],
+  header: {etape: "Étape", valeur: "Valeur"},
+  width: {etape: 420}
+})
+))
+}});
+
+define({id: "f8cce668", inputs: ["FileAttachment","Inputs"], outputs: ["gov"], body: (FileAttachment,Inputs) => {
+const gov = FileAttachment("./data/governance_regimes.csv").csv({typed: true});
+Inputs.table(gov, {
+  header: {Regime: "Régime", Nom: "Nom", Zone_ecologique_associee: "Zone écologique associée"}
+})
+return {gov};
+}});
+
+</script>
+</head>
+<body>
+<input id="observablehq-sidebar-toggle" type="checkbox" title="Toggle sidebar">
+<label id="observablehq-sidebar-backdrop" for="observablehq-sidebar-toggle"></label>
+<nav id="observablehq-sidebar">
+  <ol>
+    <label id="observablehq-sidebar-close" for="observablehq-sidebar-toggle"></label>
+    <li class="observablehq-link"><a href="./">OASIS-M — Comptes économiques satellites de l&#x27;océan (Madagascar)</a></li>
+  </ol>
+  <div id="observablehq-search"><input type="search" placeholder="Search"></div>
+  <div id="observablehq-search-results"></div>
+  <script>{const o=document.querySelector("#observablehq-search");o.setAttribute("data-shortcut",`${/Mac|iPhone/.test(navigator.platform)?"\u2318":"Alt-"}K`);const t=o.querySelector("input"),r=()=>import("./_observablehq/search.9cb49dbf.js");t.addEventListener("focus",r,{once:!0}),t.addEventListener("keydown",r,{once:!0});const c=document.querySelector("#observablehq-sidebar-toggle");addEventListener("keydown",e=>{(e.code==="KeyK"&&e.metaKey&&!e.altKey&&!e.ctrlKey||e.key==="/"&&!e.metaKey&&!e.altKey&&!e.ctrlKey&&e.target===document.body)&&(c.checked?t.focus():(c.click(),t.focus(),c.click()),t.select(),e.preventDefault())});}</script>
+  <section class="observablehq-section-active">
+    <summary>Comptes d&#x27;étendue</summary>
+    <ol>
+    <li class="observablehq-link observablehq-link-active"><a href="./extent">Étendue récifale (EC1)</a></li>
+    </ol>
+  </section>
+  <section>
+    <summary>Comptes de condition</summary>
+    <ol>
+    <li class="observablehq-link"><a href="./condition">Condition récifale (EC3)</a></li>
+    </ol>
+  </section>
+  <section>
+    <summary>Services et intégration</summary>
+    <ol>
+    <li class="observablehq-link"><a href="./services">Services écosystémiques (EC4)</a></li>
+    <li class="observablehq-link"><a href="./synthesis">Synthèse transversale</a></li>
+    <li class="observablehq-link"><a href="./seea-accounts">Comptes SEEA EA intégrés</a></li>
+    </ol>
+  </section>
+  <section>
+    <summary>Référence</summary>
+    <ol>
+    <li class="observablehq-link"><a href="./data-tables">Tables de données</a></li>
+    <li class="observablehq-link"><a href="./methods">Méthodes</a></li>
+    <li class="observablehq-link"><a href="./about">À propos</a></li>
+    </ol>
+  </section>
+</nav>
+<script>{const e=document.querySelector("#observablehq-sidebar"),o=document.querySelector("#observablehq-sidebar-toggle"),r=sessionStorage.getItem("observablehq-sidebar");r?o.checked=r==="true":o.indeterminate=!0;for(const t of document.querySelectorAll("#observablehq-sidebar summary")){const s=t.parentElement;switch(sessionStorage.getItem(`observablehq-sidebar:${t.textContent}`)){case"true":s.open=!0;break;case"false":s.classList.contains("observablehq-section-active")||(s.open=!1);break}}addEventListener("beforeunload",()=>sessionStorage.setItem("observablehq-sidebar-scrolly",`${e.scrollTop}`));const a=sessionStorage.getItem("observablehq-sidebar-scrolly");a!=null&&(e.style.cssText="overflow: hidden;",e.scrollTop=+a,e.style.cssText="");}</script>
+<div id="observablehq-center">
+<aside id="observablehq-toc" data-selector="h1:not(:first-of-type)[id], h2:first-child[id], :not(h1) + h2[id]">
+<nav>
+<div>Contents</div>
+<ol>
+<li class="observablehq-secondary-link"><a href="#baseline-canonique">Baseline canonique</a></li>
+<li class="observablehq-secondary-link"><a href="#composition-par-classe-benthique">Composition par classe benthique</a></li>
+<li class="observablehq-secondary-link"><a href="#reconciliation-du-nettoyage-de-donnees">Réconciliation du nettoyage de données</a></li>
+<li class="observablehq-secondary-link"><a href="#zones-ecologiques-et-regimes-de-gouvernance">Zones écologiques et régimes de gouvernance</a></li>
+<li class="observablehq-secondary-link"><a href="#statut-de-la-classification-benthique-complete">Statut de la classification benthique complète</a></li>
+</ol>
+</nav>
+</aside>
+<main id="observablehq-main" class="observablehq">
+<h1 id="compte-d-etendue-recifale-ec-1-m1-3" tabindex="-1"><a class="observablehq-header-anchor" href="#compte-d-etendue-recifale-ec-1-m1-3">Compte d'étendue récifale — EC1 (M1.3)</a></h1>
+<h2 id="complexe-recifal-de-toliara-sud-ouest-madagascar" tabindex="-1"><a class="observablehq-header-anchor" href="#complexe-recifal-de-toliara-sud-ouest-madagascar">Complexe récifal de Toliara, Sud-Ouest Madagascar</a></h2>
+<div class="observablehq observablehq--block"><!--:8c36b1a1:--></div>
+<div class="note">
+Statut de compte : <b>Pilote</b> (couche canonique validée) — la classification benthique complète destinée à alimenter le compte de condition (Pilier 3) reste <b>Bloquée</b>, voir <a href="./synthesis">Synthèse transversale</a>.
+</div>
+<h2 id="baseline-canonique" tabindex="-1"><a class="observablehq-header-anchor" href="#baseline-canonique">Baseline canonique</a></h2>
+<div class="grid grid-cols-3">
+  <div class="card">
+    <h2>Étendue totale (2021, révisée 2026)</h2>
+    <span class="big">111 544 ha</span>
+  </div>
+  <div class="card">
+    <h2>Écart de réconciliation</h2>
+    <span class="big">8,88 ha</span>
+    <span class="muted">≈ 0,008% de la baseline</span>
+  </div>
+  <div class="card">
+    <h2>Classes benthiques</h2>
+    <span class="big">5</span>
+    <span class="muted">Coral/Algae, Sand, Rubble, Seagrass, Rock</span>
+  </div>
+</div>
+<p>La couche <code>Reef_extent_SW_Mada_OASISM.csv</code> / <code>Reef_extent.shp</code> constitue la référence canonique du pipeline, validée à 0,006% près après dédoublonnage. Elle est distincte de la sortie de classification benthique complète (<code>Resultat.shp</code>, voir <em>Statut de la classification</em> ci-dessous), non retenue en l'état.</p>
+<h2 id="composition-par-classe-benthique" tabindex="-1"><a class="observablehq-header-anchor" href="#composition-par-classe-benthique">Composition par classe benthique</a></h2>
+<div class="observablehq observablehq--block"><!--:70d6c570:--></div>
+<div class="grid grid-cols-1">
+  <div class="card">
+    <observablehq-loading></observablehq-loading><!--:20e324aa:-->
+  </div>
+</div>
+<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:757a18ab:--></div>
+<div class="note">
+<b>Point de vigilance SEEA EA :</b> la classe <code>Coral_Alga</code> fusionne corail vivant et macroalgues (Harris et al. 2009). Le cadre SEEA EA impose normalement une séparation des deux pour le compte d'étendue et pour la valorisation monétaire différenciée — ce n'est pas encore le cas dans ce pilote.
+</div>
+<h2 id="reconciliation-du-nettoyage-de-donnees" tabindex="-1"><a class="observablehq-header-anchor" href="#reconciliation-du-nettoyage-de-donnees">Réconciliation du nettoyage de données</a></h2>
+<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:51bf7015:--></div>
+<h2 id="zones-ecologiques-et-regimes-de-gouvernance" tabindex="-1"><a class="observablehq-header-anchor" href="#zones-ecologiques-et-regimes-de-gouvernance">Zones écologiques et régimes de gouvernance</a></h2>
+<p>Six zones écologiques structurent l'accounting area : <strong>Soariake, Teariake, Paysage Mahafaly, Baie de Ranobe, Sambele, Velondriake</strong>. Quatre régimes de gouvernance se superposent à ces zones : deux aires marines protégées (Nosy Ve Androka, Ranobe Bay) et deux LMMA (Velondriake, Soariake).</p>
+<div class="observablehq observablehq--block"><!--:f8cce668:--></div>
+<div class="note">
+La désagrégation de l'étendue en hectares par zone écologique et par régime de gouvernance (protégé vs zone libre) n'est pas encore disponible comme sortie finalisée du pipeline — voir <code>extent-protected-area</code> dans les <a href="./data-tables">tables de données</a>. Ne pas confondre cette absence de désagrégation avec une absence de gouvernance : la table MPA/LMMA existe mais ses cellules de superficie ne sont pas renseignées à ce stade (statut Bloqué).
+</div>
+<h2 id="statut-de-la-classification-benthique-complete" tabindex="-1"><a class="observablehq-header-anchor" href="#statut-de-la-classification-benthique-complete">Statut de la classification benthique complète</a></h2>
+<p>La sortie de classification complète (<code>Resultat.shp</code>, 9 couches classificateurs) reste au statut <strong>Bloqué</strong> :</p>
+<ul>
+<li>Surface totale déclarée après correction topologique : ~4 587 km², soit un facteur ~4 au-dessus de la baseline canonique (111 544 ha ≈ 1 115 km²) — écart non réconcilié dans la réponse reçue.</li>
+<li>Échantillon de validation (1 822 points) : 1 437 points (79%) sont en réalité des points d'entraînement réutilisés en validation. Les métriques rapportées (OA=95,77%, Kappa=0,8899) ne sont donc pas indépendantes de l'entraînement, malgré leur présentation comme telles.</li>
+<li>Origine de deux couches classificateurs (DTCX, RTCX) contestée par l'auteur déclaré de la classification — désaccord non résolu avec le contenu du fichier source lui-même.</li>
+<li>Seul point substantiel et utilisable de la réponse reçue : la stratégie de ligne de base combinant Nomenisoa et al. (2021) dans le Grand Récif de Toliara et l'Allen Coral Atlas (2021) hors GRT, avec une matrice de transition Corail/Algue → Sable de 18% (GRT) et 14% (hors GRT), agrégée à 16% (± 3 points).</li>
+</ul>
+<p><strong>Conséquence pour le compte de condition :</strong> le Pilier 3 (habitat benthique, pondération 40% dans le composite intégré M1.3) reste en attente (PENDING) tant que ces points ne sont pas résolus — voir <a href="./condition">Condition récifale</a>.</p>
+<style>
+.note {
+  background: color-mix(in srgb, var(--theme-yellow) 12%, transparent);
+  border: 1px solid var(--theme-yellow);
+  border-radius: 6px;
+  padding: 10px 14px;
+  font-size: 13px;
+  margin: 16px 0;
+}
+</style>
+</main>
+<footer id="observablehq-footer">
+<nav><a rel="prev" href="./"><span>OASIS-M — Comptes économiques satellites de l&#x27;océan (Madagascar)</span></a><a rel="next" href="./condition"><span>Condition récifale (EC3)</span></a></nav>
+<div>OASIS-M — Ocean Accounts Madagascar · IH.SM Université de Toliara · GOAP/UNSW Sydney · Blue Planet Fund. Cadre UN SEEA EA (2021).</div>
+</footer>
+</div>
+</body>
+</html>

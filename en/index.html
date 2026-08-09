@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="generator" content="Observable Framework v1.13.4">
+<title>OASIS-M — Ocean Economic Satellite Accounts (Madagascar)</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&amp;display=swap" crossorigin>
+<link rel="preload" as="style" href="./_observablehq/theme-air.d5b7fcbe.css">
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&amp;display=swap" crossorigin>
+<link rel="stylesheet" type="text/css" href="./_observablehq/theme-air.d5b7fcbe.css">
+<link rel="modulepreload" href="./_observablehq/client.3941ddfb.js">
+<link rel="modulepreload" href="./_observablehq/runtime.607a8173.js">
+<link rel="modulepreload" href="./_observablehq/stdlib.c88dcc4b.js">
+<link rel="modulepreload" href="./_npm/d3-dsv@3.0.1/5e480b81.js">
+<link rel="icon" href="./_file/observable.1af93621.png" type="image/png" sizes="32x32">
+<script type="module">
+
+import {define} from "./_observablehq/client.3941ddfb.js";
+import {registerFile} from "./_observablehq/stdlib.c88dcc4b.js";
+
+registerFile("./data/condition_fish_headline.csv", {"name":"./data/condition_fish_headline.csv","mimeType":"text/csv","path":"./_file/data/condition_fish_headline.dc77cc9b.csv","lastModified":1786250445953,"size":548});
+registerFile("./data/condition_invert_by_zone.csv", {"name":"./data/condition_invert_by_zone.csv","mimeType":"text/csv","path":"./_file/data/condition_invert_by_zone.272fe530.csv","lastModified":1786112943598,"size":1395});
+registerFile("./data/data_inventory.csv", {"name":"./data/data_inventory.csv","mimeType":"text/csv","path":"./_file/data/data_inventory.d471d3a4.csv","lastModified":1786112980652,"size":8397});
+registerFile("./data/extent_by_class.csv", {"name":"./data/extent_by_class.csv","mimeType":"text/csv","path":"./_file/data/extent_by_class.db143b75.csv","lastModified":1786112943597,"size":175});
+
+define({id: "ce1e0bea", inputs: ["FileAttachment"], outputs: ["extentByClass","invertByZone","fishHeadline","inventory"], body: (FileAttachment) => {
+const extentByClass = FileAttachment("./data/extent_by_class.csv").csv({typed: true});
+const invertByZone = FileAttachment("./data/condition_invert_by_zone.csv").csv({typed: true});
+const fishHeadline = FileAttachment("./data/condition_fish_headline.csv").csv({typed: true});
+const inventory = FileAttachment("./data/data_inventory.csv").csv({typed: true});
+return {extentByClass,invertByZone,fishHeadline,inventory};
+}});
+
+</script>
+</head>
+<body>
+<input id="observablehq-sidebar-toggle" type="checkbox" title="Toggle sidebar">
+<label id="observablehq-sidebar-backdrop" for="observablehq-sidebar-toggle"></label>
+<nav id="observablehq-sidebar">
+  <ol>
+    <label id="observablehq-sidebar-close" for="observablehq-sidebar-toggle"></label>
+    <li class="observablehq-link observablehq-link-active"><a href="./">OASIS-M — Ocean Economic Satellite Accounts (Madagascar)</a></li>
+  </ol>
+  <div id="observablehq-search"><input type="search" placeholder="Search"></div>
+  <div id="observablehq-search-results"></div>
+  <script>{const o=document.querySelector("#observablehq-search");o.setAttribute("data-shortcut",`${/Mac|iPhone/.test(navigator.platform)?"\u2318":"Alt-"}K`);const t=o.querySelector("input"),r=()=>import("./_observablehq/search.122f94eb.js");t.addEventListener("focus",r,{once:!0}),t.addEventListener("keydown",r,{once:!0});const c=document.querySelector("#observablehq-sidebar-toggle");addEventListener("keydown",e=>{(e.code==="KeyK"&&e.metaKey&&!e.altKey&&!e.ctrlKey||e.key==="/"&&!e.metaKey&&!e.altKey&&!e.ctrlKey&&e.target===document.body)&&(c.checked?t.focus():(c.click(),t.focus(),c.click()),t.select(),e.preventDefault())});}</script>
+  <section>
+    <summary>Extent accounts</summary>
+    <ol>
+    <li class="observablehq-link"><a href="./extent">Reef extent (EC1)</a></li>
+    </ol>
+  </section>
+  <section>
+    <summary>Condition accounts</summary>
+    <ol>
+    <li class="observablehq-link"><a href="./condition">Reef condition (EC3)</a></li>
+    </ol>
+  </section>
+  <section>
+    <summary>Services and integration</summary>
+    <ol>
+    <li class="observablehq-link"><a href="./services">Ecosystem services (EC4)</a></li>
+    <li class="observablehq-link"><a href="./synthesis">Cross-ecosystem synthesis</a></li>
+    <li class="observablehq-link"><a href="./seea-accounts">Integrated SEEA EA accounts</a></li>
+    </ol>
+  </section>
+  <section>
+    <summary>Reference</summary>
+    <ol>
+    <li class="observablehq-link"><a href="./data-tables">Data tables</a></li>
+    <li class="observablehq-link"><a href="./methods">Methods</a></li>
+    <li class="observablehq-link"><a href="./about">About</a></li>
+    </ol>
+  </section>
+</nav>
+<script>{const e=document.querySelector("#observablehq-sidebar"),o=document.querySelector("#observablehq-sidebar-toggle"),r=sessionStorage.getItem("observablehq-sidebar");r?o.checked=r==="true":o.indeterminate=!0;for(const t of document.querySelectorAll("#observablehq-sidebar summary")){const s=t.parentElement;switch(sessionStorage.getItem(`observablehq-sidebar:${t.textContent}`)){case"true":s.open=!0;break;case"false":s.classList.contains("observablehq-section-active")||(s.open=!1);break}}addEventListener("beforeunload",()=>sessionStorage.setItem("observablehq-sidebar-scrolly",`${e.scrollTop}`));const a=sessionStorage.getItem("observablehq-sidebar-scrolly");a!=null&&(e.style.cssText="overflow: hidden;",e.scrollTop=+a,e.style.cssText="");}</script>
+<div id="observablehq-center">
+<main id="observablehq-main" class="observablehq">
+<div class="observablehq observablehq--block"><!--:ce1e0bea:--></div>
+<h1 id="oasis-m-ocean-economic-satellite-accounts-for-madagascar" tabindex="-1"><a class="observablehq-header-anchor" href="#oasis-m-ocean-economic-satellite-accounts-for-madagascar">OASIS-M — Ocean Economic Satellite Accounts for Madagascar</a></h1>
+<h2 id="pilot-seea-ea-account-for-photic-coral-reefs-m1-3-southwest-madagascar-2025-2026" tabindex="-1"><a class="observablehq-header-anchor" href="#pilot-seea-ea-account-for-photic-coral-reefs-m1-3-southwest-madagascar-2025-2026">Pilot SEEA EA account for photic coral reefs (M1.3) — Southwest Madagascar, 2025–2026</a></h2>
+<hr>
+<h2 id="abstract" tabindex="-1"><a class="observablehq-header-anchor" href="#abstract">Abstract</a></h2>
+<p>This report presents the pilot SEEA EA account (UN, 2021)[^1] for the photic coral reefs (IUCN GET M1.3) of the Toliara reef complex, Atsimo Andrefana region, Southwest Madagascar. OASIS-M (Ocean Accounts in Support of Sustainable Ocean Planning for Madagascar) is led by the Institut Halieutique et des Sciences Marines (IH.SM, University of Toliara), in partnership with the Global Ocean Accounts Partnership (GOAP/UNSW Sydney) and with support from the Blue Planet Fund, November 2024 – December 2026.</p>
+<p>The account covers 36 villages and 86 ecological monitoring stations across six zones (Soariake, Teariake, Paysage Mahafaly, Baie de Ranobe, Sambele, Velondriake) and four governance regimes (two marine protected areas, two LMMAs). The canonical reef extent baseline is <strong>111,544 ha</strong>. Biotic condition draws on 26 sites / 86 stations of underwater visual census (UVC) for fish and 323 post-QA rows of invertebrate data.</p>
+<p>Unlike the closest regional benchmark account — the Kenya Coastal Ecosystem Accounts, Kilifi County (Gacutan et al., March 2026)[^2] — this pilot explicitly documents, account by account, what is publishable, pilot, proxy, or blocked, rather than presenting only finalised results. This page deliberately follows the presentation structure of the Kenya account (extent → condition → services → cross-ecosystem synthesis → integrated SEEA EA accounts), while retaining the traceability discipline specific to the OASIS-M pipeline.</p>
+<hr>
+<h2 id="study-rationale" tabindex="-1"><a class="observablehq-header-anchor" href="#study-rationale">Study rationale</a></h2>
+<p>Southwest Madagascar hosts one of the largest reef systems in the Western Indian Ocean, directly supporting the livelihoods of the Vezo population engaged in artisanal fishing. No standardised SEEA EA ocean account previously existed for this area before OASIS-M. This pilot establishes the opening condition for the 2025-2026 accounting period and explicitly identifies the data infrastructure, reference levels, and monitoring priorities needed for regular account compilation, with a view to eventual integration into the SNA/NAMAD via INSTAT.</p>
+<hr>
+<h2 id="study-area" tabindex="-1"><a class="observablehq-header-anchor" href="#study-area">Study area</a></h2>
+<p><strong>Coral reefs (M1.3)</strong> — Toliara reef complex, ~80 km (Sarodrano–Andavadoaka), Ampanihy, Toliara II and Morombe districts, Atsimo Andrefana region.</p>
+<ul>
+<li>2 biophysical pillars covered: fish condition (26 sites/86 stations) and invertebrates (323 rows, 6 zones)</li>
+<li>6 ecological zones: Soariake, Teariake, Paysage Mahafaly, Baie de Ranobe, Sambele, Velondriake</li>
+<li>4 governance regimes: Nosy Ve Androka (MPA), Ranobe Bay (MPA), Velondriake (LMMA), Soariake (LMMA)</li>
+<li>Extent baseline: 111,544 ha (2021, revised in the 2026 campaign)</li>
+</ul>
+<hr>
+<h2 id="key-metrics-at-a-glance" tabindex="-1"><a class="observablehq-header-anchor" href="#key-metrics-at-a-glance">Key metrics at a glance</a></h2>
+<div class="grid grid-cols-4">
+  <div class="card">
+    <h3>Reef extent</h3>
+    <span class="big-number">111,544 ha</span>
+    <span class="note">canonical baseline, validated to within 0.006%</span>
+  </div>
+  <div class="card">
+    <h3>Fish biomass</h3>
+    <span class="big-number">367.3 kg/ha</span>
+    <span class="note">official calculation reference: 1150 kg/ha (CI=0.32) — for reference, WIO sustainability threshold: 600 kg/ha</span>
+  </div>
+  <div class="card">
+    <h3>Species richness</h3>
+    <span class="big-number">58.4 spp./station</span>
+    <span class="note">227 cumulative species, 38 families — WIO median 117 (Samoilys et al. 2019)</span>
+  </div>
+  <div class="card">
+    <h3>IC_urchin — inter-zone range</h3>
+    <span class="big-number flag">0.03 → 1.00</span>
+    <span class="note">Teariake (degraded) to Velondriake (ceiling)</span>
+  </div>
+</div>
+<div class="grid grid-cols-3">
+  <div class="card">
+    <h3>Fish/invertebrate monitoring sites</h3>
+    <span class="big-number">26 / 86</span>
+    <span class="note">sites / stations, canonical hierarchy</span>
+  </div>
+  <div class="card">
+    <h3>Ecological zones</h3>
+    <span class="big-number">6</span>
+    <span class="note">Soariake, Teariake, Paysage Mahafaly, Baie de Ranobe, Sambele, Velondriake</span>
+  </div>
+  <div class="card">
+    <h3>Level-4 accounts (OESA)</h3>
+    <span class="big-number flag">Blocked</span>
+    <span class="note">all GVA line items pending EC1/EC4 resolution</span>
+  </div>
+</div>
+<hr>
+<h2 id="headline-findings" tabindex="-1"><a class="observablehq-header-anchor" href="#headline-findings">Headline findings</a></h2>
+<h3 id="fish-biomass-is-below-the-wio-sustainability-threshold-and-the-methodological-correction-matters-more-than-the-figure-itself" tabindex="-1"><a class="observablehq-header-anchor" href="#fish-biomass-is-below-the-wio-sustainability-threshold-and-the-methodological-correction-matters-more-than-the-figure-itself">Fish biomass is below the WIO sustainability threshold, and the methodological correction matters more than the figure itself</a></h3>
+<p>The zone-weighted average biomass (367.3 kg/ha) is below the WIO threshold of 600 kg/ha (McClanahan et al. 2016). This figure corrects a factor-2 error in an initial estimate of 744.5 kg/ha, caused by an incorrect transect-area assumption — the old value should no longer be cited. The correction itself, documented and traced, is the most solid methodological result of this pilot at this stage.</p>
+<h3 id="the-urchin-index-collapses-at-sambele-after-zone-reassignment" tabindex="-1"><a class="observablehq-header-anchor" href="#the-urchin-index-collapses-at-sambele-after-zone-reassignment">The urchin index collapses at Sambele after zone reassignment</a></h3>
+<p>Correcting the ecological assignment of four stations (Fierenamasay, Tsandamba) caused Sambele's IC_urchin to drop from 0.8757 to <strong>0.0648</strong> — the zone moves from a profile close to Velondriake to the most degraded zone in the account after Teariake. Any figure or draft using the old 0.88 value must be corrected before circulation.</p>
+<h3 id="the-full-benthic-classification-remains-blocked-not-merely-delayed" tabindex="-1"><a class="observablehq-header-anchor" href="#the-full-benthic-classification-remains-blocked-not-merely-delayed">The full benthic classification remains blocked, not merely delayed</a></h3>
+<p>Unlike the canonical extent baseline (111,544 ha, publishable), the full benthic classification (<code>Resultat.shp</code>) shows a ~4x inconsistency with the canonical baseline and validation metrics (OA=95.77%, Kappa=0.89) that remain partly built on training data. The response received from the classification's author does not resolve either point. The benthic condition account (Pillar 3, 40% weight in the integrated composite) therefore remains pending, and the currently computable M1.3 composite CI is <strong>partial</strong> (Pillars 1+2 only).</p>
+<h3 id="level-4-accounts-oesa-and-the-monetary-account-meca-remain-blocked" tabindex="-1"><a class="observablehq-header-anchor" href="#level-4-accounts-oesa-and-the-monetary-account-meca-remain-blocked">Level-4 accounts (OESA) and the monetary account (MECA) remain blocked</a></h3>
+<p>The MECA depends on a consensus EC1 — not achieved — and a resolved EC4 provisioning account — not achieved (VF1/VF2 instrument confound, missing commune→district crosswalk). Every line of the pilot OESA table (formal fisheries, informal fisheries, tourism, transport) is at Blocked status as of July 2026.</p>
+<hr>
+<h2 id="report-structure" tabindex="-1"><a class="observablehq-header-anchor" href="#report-structure">Report structure</a></h2>
+<h3 id="reef-extent-ec-1" tabindex="-1"><a class="observablehq-header-anchor" href="#reef-extent-ec-1"><a href="./extent">Reef extent (EC1)</a></a></h3>
+<p>Canonical extent account (111,544 ha), benthic class composition, data-cleaning reconciliation, status of the full classification.</p>
+<h3 id="reef-condition-ec-3" tabindex="-1"><a class="observablehq-header-anchor" href="#reef-condition-ec-3"><a href="./condition">Reef condition (EC3)</a></a></h3>
+<p>Fish biomass and richness, invertebrate condition indices by zone (urchin, clam, COTS), status of the benthic habitat pillar.</p>
+<h3 id="ecosystem-services-ec-4" tabindex="-1"><a class="observablehq-header-anchor" href="#ecosystem-services-ec-4"><a href="./services">Ecosystem services (EC4)</a></a></h3>
+<p>Nursery + provisioning architecture, anti-double-counting rule, empirical blocking status.</p>
+<h3 id="cross-ecosystem-synthesis" tabindex="-1"><a class="observablehq-header-anchor" href="#cross-ecosystem-synthesis"><a href="./synthesis">Cross-ecosystem synthesis</a></a></h3>
+<p>Consolidated data confidence table (Publishable / Pilot / Proxy / Blocked / To be resolved), methodological comparison with the Kenya account.</p>
+<h3 id="integrated-seea-ea-accounts" tabindex="-1"><a class="observablehq-header-anchor" href="#integrated-seea-ea-accounts"><a href="./seea-accounts">Integrated SEEA EA accounts</a></a></h3>
+<p>Four-level architecture (EC1→EC4, MECA, OESA), progress status by level.</p>
+<h3 id="methods" tabindex="-1"><a class="observablehq-header-anchor" href="#methods"><a href="./methods">Methods</a></a></h3>
+<p>Field protocols, condition-index formulas, valuation unit values, known limitations.</p>
+<h3 id="data-tables" tabindex="-1"><a class="observablehq-header-anchor" href="#data-tables"><a href="./data-tables">Data tables</a></a></h3>
+<p>Sortable tables of all underlying source datasets.</p>
+<hr>
+<p><strong>Study area:</strong> Toliara reef complex, Atsimo Andrefana, Madagascar | <strong>Framework:</strong> UN SEEA EA | <strong>Institution:</strong> IH.SM, University of Toliara | <strong>Partners:</strong> GOAP/UNSW Sydney, Blue Planet Fund | <a href="./about">About and partners</a></p>
+<hr>
+<p>[^1]: United Nations (2021). <em>System of Environmental-Economic Accounting — Ecosystem Accounting</em> (SEEA EA). United Nations, New York.
+[^2]: Gacutan, J. et al. (2026). <em>Kenya Coastal Ecosystem Accounts — Baseline Assessment of Coral Reef, Mangrove, and Seagrass Ecosystems, Kilifi County, 2024-2025.</em> j-gacutan.github.io/Kenya_accounts</p>
+<style>
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.card h3 {
+  margin: 0;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--theme-foreground-muted);
+}
+.big-number {
+  font-size: 28px;
+  font-weight: 600;
+}
+.big-number.flag {
+  color: var(--theme-red);
+}
+.note {
+  font-size: 12px;
+  color: var(--theme-foreground-muted);
+}
+</style>
+</main>
+<footer id="observablehq-footer">
+<nav><a rel="next" href="./extent"><span>Reef extent (EC1)</span></a></nav>
+<div>OASIS-M — Ocean Accounts Madagascar · IH.SM University of Toliara · GOAP/UNSW Sydney · Blue Planet Fund. UN SEEA EA framework (2021).</div>
+</footer>
+</div>
+</body>
+</html>
