@@ -1,4 +1,0 @@
-indicator,zone_value,reference_level,CI,source_reference,confidence
-Fish biomass (kg/ha) -- official calculation reference,367.3,"1150 kg/ha (conservation target, McClanahan et al. 2016)",0.32,McClanahan et al. 2016,HIGH
-Fish biomass (kg/ha) -- for reference (contextual),367.3,"600 kg/ha (sustainability threshold, McClanahan et al. 2016)",0.612,McClanahan et al. 2016,HIGH
-Species richness (spp./station) -- unresolved discrepancy (see Condition page note),58.4,"117 spp. (WIO median, Samoilys et al. 2019)",0.499,Samoilys et al. 2019,MEDIUM
